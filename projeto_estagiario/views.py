@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from forms import AtividadeForm
+from forms import AtividadeForm, TarefaForm
 
 # Create your views here.
 def index(request):
-    form = AtividadeForm()
+    atividade_form = AtividadeForm()
+    tarefa_form = TarefaForm()
     return render(request, 'projeto_estagiario/index.html', {
-        'form': form,
+        'atividade_form': atividade_form,
+        'tarefa_form': tarefa_form,
     })

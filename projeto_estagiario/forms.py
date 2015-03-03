@@ -1,6 +1,6 @@
 from django.forms import Form, ModelForm, BooleanField, DateField, TextInput, CheckboxInput, DateInput, HiddenInput, Textarea, Select, RadioSelect
 
-from models import Atividade
+from models import Atividade, Tarefa
 
 
 class AtividadeForm(ModelForm):
@@ -30,4 +30,18 @@ class AtividadeForm(ModelForm):
             'comentario_estagiario': Textarea(attrs={'rows': 3}),
             'data_inicio': DateInput(format='%d/%m/%Y', attrs={'tabindex': 4, 'maxlength': 10}),
             'data_fim': DateInput(format='%d/%m/%Y', attrs={'tabindex': 4, 'maxlength': 10}),
+        }
+
+
+class TarefaForm(ModelForm):
+
+    class Meta:
+        model = Tarefa
+
+        fields = ['descricao_tarefa', 'principais_dificuldades', 'status']
+
+        widgets = {
+            'descricao_tarefa': TextInput(attrs={'maxlength': 80}),
+            'principais_dificuldades': Textarea(attrs={'rows': 3}),
+            'status': RadioSelect(),
         }
