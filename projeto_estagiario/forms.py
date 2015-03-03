@@ -1,9 +1,13 @@
 from django.forms import Form, ModelForm, BooleanField, DateField, TextInput, CheckboxInput, DateInput, HiddenInput, Textarea, Select, RadioSelect
 
+from models import Atividade
 
-class AtividadeForm(Form):
+
+class AtividadeForm(ModelForm):
 
     class Meta:
+        model = Atividade
+
         fields = [
             'descricao_historia',
             'conhecimento_adquirido',

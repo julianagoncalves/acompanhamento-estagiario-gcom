@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'projeto_estagiario/templates')]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -59,8 +59,12 @@ WSGI_APPLICATION = 'acompanhamento_estagiario.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'projeto_estagiario',
+        'USER': os.getenv('DATABASES_DEFAULT_USER', 'root'),
+        'PASSWORD': os.getenv('DATABASES_DEFAULT_PASSWORD', ''),
+        'HOST': os.getenv('DATABASES_DEFAULT_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASES_DEFAULT_PORT', ''),
     }
 }
 
