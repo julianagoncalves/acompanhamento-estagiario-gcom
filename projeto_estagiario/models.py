@@ -1,5 +1,11 @@
 from django.db import models
 
+TIPOS_STATUS = (
+        ('Concluida', 'Concluida'),
+        ('Em Andamento', 'Em Andamento'),
+        ('Parada', 'Parada'),
+)
+
 
 class Atividade(models.Model):
     id = models.AutoField(primary_key=True, db_column="atividade_id")
@@ -23,13 +29,8 @@ class Tarefa(models.Model):
     id_atividade = models.ForeignKey(Atividade)
     descricao_tarefa = models.CharField(max_length=200, db_column="descricao_tarefa_txt", verbose_name='Descricao Tarefa')
     principais_dificuldades = models.CharField(max_length=100, db_column="principais_dificuldades_txt", verbose_name='Principais Dificuldades')
-    tipos_status = (
-        ('Concluida', 'Concluida'),
-        ('Em Andamento', 'Em Andamento'),
-        ('Parada', 'Parada')
-        )
 
-    status = models.CharField(max_length=15, db_column="status_txt", verbose_name='Status', choices=tipos_status)
+    status = models.CharField(max_length=15, db_column="status_txt", verbose_name='Status', choices=TIPOS_STATUS)
 
     class Meta:
         db_table = "acompanhamento_estagiario_tarefa"
