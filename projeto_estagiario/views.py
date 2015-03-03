@@ -10,3 +10,7 @@ def index(request):
         'atividade_form': atividade_form,
         'tarefa_form': tarefa_form,
     })
+
+def perfil(request):
+    return render(request, 'projeto_estagiario/perfil.html',{
+    })
