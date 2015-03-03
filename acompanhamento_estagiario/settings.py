@@ -60,19 +60,11 @@ WSGI_APPLICATION = 'acompanhamento_estagiario.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-<<<<<<< HEAD
-        'NAME': 'acompanhamento_estagiario',
-        'USER': 'root',
-        'PASSWORD': '', 
-        'HOST': 'localhost',
-        'PORT': '', 
-=======
         'NAME': 'projeto_estagiario',
         'USER': os.getenv('DATABASES_DEFAULT_USER', 'root'),
         'PASSWORD': os.getenv('DATABASES_DEFAULT_PASSWORD', ''),
         'HOST': os.getenv('DATABASES_DEFAULT_HOST', 'localhost'),
         'PORT': os.getenv('DATABASES_DEFAULT_PORT', ''),
->>>>>>> 562fb7184ede89f2c52518611fb66b2e58da4ec5
     }
 }
 
