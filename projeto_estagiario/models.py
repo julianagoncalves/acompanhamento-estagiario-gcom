@@ -33,6 +33,8 @@ class Tarefa(models.Model):
 
     class Meta:
         db_table = "acompanhamento_estagiario_tarefa"
+        verbose_name = u'Tarefa'
+        verbose_name_plural = u'Tarefas'
 
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True, db_column="usuario_id")
